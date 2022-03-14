@@ -118,15 +118,6 @@ PRO HV_TRACE_PROCESS_BACKFILL, date1,date2,_extra=extra
         files=tobj->cat_search(start_time,end_time,count=count,/verbose)
         if count eq 0 then continue                                             ;-- skip to next block if no files found  
         
-        
-; Surgically removed as it is now handled by TRACE object above
-; Query the catalog
-; trace_cat, start_time, end_time, catalog, status=status
-; If there is data, make the JPEG2000 files
-; if status eq 1 then begin
-; Convert the catalog entries to file names
-; trace_cat2data,catalog,files,-1,/filedset
-
 ; Send the files list, then prep the data and write a JP2 file for
 ; each of the files
         
